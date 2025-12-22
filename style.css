@@ -7,20 +7,30 @@
     margin: 50px auto; */
 }
 .Nav{
-    width: 40%;
+    display: flex;
+    /* width: 100%; */
     background-color: rgba(255, 255, 255, 0.356);
-    margin: 1px auto;
+    margin: 1% auto;
+    justify-content: flex-start;
     border-radius: 70px;
     /* position: static; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
     position: fixed;
-    padding: 5px;
     top: 10px;
     left: 30%;
     z-index: 100;
-    
+    align-items: center;
 }
-.Nav table tr  td.nav_hover {
+.Nav nav ul {
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.Nav nav ul li {
+    float: left;
     text-align: center;
     font-weight: bold;
     color: rgb(2, 95, 95);
@@ -30,18 +40,39 @@
     margin-left: 5px;
     cursor: pointer;
 }
-.Nav table tr  td.nav_hover a:hover{
-    background-color: rgb(2, 95, 95);
-    color: white;
-}
-.Nav table tr  td.nav_hover a{
+.Nav nav ul li a{
     text-decoration: none;
-    color: rgb(2, 95, 95);padding: 10px;
-    /* background-color: rgb(247, 224, 196); */
+}
+.Nav nav ul li a:visited {
+    color: rgb(2, 95, 95);
+}
+.Nav nav ul li a:any-link {
+    color: rgb(2, 95, 95);
+}
+/* .Nav table tr  td.nav_hover {
+    display: inline-flex;
+    gap: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(2, 95, 95);
+    padding: 10px;
+    background-color: rgb(247, 224, 196);
     border-radius: 50px;
     margin-left: 5px;
     cursor: pointer;
 }
+.Nav table tr  td.nav_hover a:hover{
+    background-color: rgb(2, 95, 95);
+    color: white;
+} */
+/* .Nav table tr  td.nav_hover a{
+    text-decoration: none;
+    color: rgb(2, 95, 95);padding: 10px;
+    background-color: rgb(247, 224, 196);
+    border-radius: 50px;
+    margin-left: 5px;
+    cursor: pointer;
+} */
 
 body {
     background-color: rgb(241, 241, 210);
@@ -57,7 +88,7 @@ h1 {
 }
 
 .moddel {
-    height: 500px;
+    height: 100%;
     /* background-color: blue; */
     margin: 10px;
     border-radius: 60px;
@@ -70,7 +101,7 @@ h1 {
 }
 
 .moddel_1 {
-    height: 500px;
+    height: 100%;
     /* background-color: rgb(0, 255, 76); */
     margin: 10px;
     border-radius: 60px;
@@ -105,7 +136,7 @@ p {
 }
 
 .flottant div {
-    float: left;
+    display: flex;
     margin-bottom: 50px;
 }
 
@@ -129,9 +160,9 @@ section {
 
 .header {
     padding: 30px;
-    width: 800px;
-    margin: 50px auto;
-    height: 350px;
+    width: 100%;
+    margin: 1% auto;
+    height: 4%;
     ;
 }
 
