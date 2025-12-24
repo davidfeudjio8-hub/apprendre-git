@@ -11,7 +11,7 @@
     /* width: 100%; */
     background-color: rgba(255, 255, 255, 0.356);
     margin: 1% auto;
-    justify-content: flex-start;
+    justify-content: center;
     border-radius: 70px;
     /* position: static; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
@@ -135,11 +135,12 @@ p {
     font-weight: bold;
 }
 
-.flottant div {
+/* .flottant div {
     display: flex;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px;} */
+section {
+    display: flex;
 }
-
 .clr {
     clear: both;
 }
