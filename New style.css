@@ -1,0 +1,8 @@
+*{
+    box-sizing: border-box;
+}
+nav ul {
+    display: flex;
+    background-color: aqua;
+    text-decoration: none;
+}
