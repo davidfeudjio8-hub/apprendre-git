@@ -9,28 +9,39 @@ header {
     display: flex;
     justify-content: center;
 }
-@media (max-width: 360px) and (min-width: 0px) {
+/* Specifically targeting small mobile devices (0px to 360px) */
+@media (max-width: 360px) {
     .Nav {
-      width: 100%;
-      flex-wrap: wrap; /* Allow navigation items to wrap */
-      height: auto; /* Allow height to adjust based on content */
-      justify-content: space-around; /* Distribute items */
-      padding: 5px 0; /* Adjust padding */
+        padding: 5px 8px; /* Shrink container padding */
+        width: 92%;       /* Ensure it doesn't touch screen edges */
+        left: 4%;         /* Center it manually since it's position: fixed */
     }
-    .Nav nav {
-      width: auto; /* Let nav content determine its width */
-      flex-basis: auto; /* Let nav content determine its basis */
-    }
-  }
 
+    .Nav nav ul {
+        gap: 2px;         /* Minimize space between menu items */
+    }
+
+    .Nav nav ul li a {
+        /* Use clamp to scale font between 12px and 16px based on screen width */
+        font-size: clamp(12px, 4vw, 16px); 
+        padding: 8px 10px; /* Reduce internal link padding */
+        white-space: nowrap; /* Prevents "Contact" etc. from breaking into 2 lines */
+    }
+}
 .Nav {
     display: inline-flex;
     background-color: rgba(255, 255, 255, 0.356);
     border-radius: 70px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
     position: fixed;
     top: 10px;
-    z-index: 100;
+    width: auto;
+    padding: 10px 15px;
+    /* Adds space around the list */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* top: 20px; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
 
 }
 
@@ -43,16 +54,39 @@ header {
     text-align: center;
     gap: 10px;
     justify-content: center;
+    flex-shrink: 1;
 }
 
 .Nav nav ul li a {
     text-decoration: none;
     color: rgb(2, 95, 95);
-    padding: 10px;
+    padding: 10px 20px;
+    display: block;
+    /* Makes links fill the whole li area */
+    padding: 10px 20px;
+    /* Space inside each link */
+    text-decoration: none;
+    /* Removes underlines */
+    font-weight: 600;
+    /* Bold text */
+    font-size: 20px;
+    /* Base font size */
+    gap: 15px;
+    /* Space between items */
+    transition: background-color 0.3s, border-radius 0.3s;
+    /* Smooth transitions for hover effect */
+
+}
+.Nav nav ul li a:hover {
+    background-color: #e2dce7;
+    /* Light up on hover */
+    border-radius: 40px;
+    /* Make the hover highlight rounded */
 }
 
+
 body {
-    background-color: rgb(241, 241, 210);
+    background-color: rgb(255, 255, 255);
     padding: 30px;
 }
 
@@ -91,6 +125,7 @@ h1 {
         /* Remove float */
         margin: 10px 0;
         /* Adjust margin for vertical stacking */
+        height: 400px;
     }
 }
 
@@ -110,7 +145,14 @@ h1 {
         /* Remove float */
         margin: 10px 0;
         /* Adjust margin for vertical stacking */
+        height: 400px;
+
     }
+}
+section {
+    display: flex;
+    flex-wrap: wrap;
+    /* allows items to move to the next line on mobile */
 }
 
 .moddel {
@@ -147,6 +189,15 @@ h1 {
     padding-top: 50px;
     margin-left: 50px;
 }
+.moddel_1:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+
+}.moddel:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+
+}
 
 p {
     text-align: center;
@@ -179,30 +230,6 @@ section {
 
 .clr {
     clear: both;
-}
-
-/* section {
-    margin-top: 50px;
-    margin-bottom: 70px;
-}
-
-@font-face {
-    font-family: Satoshi;
-    src: url(\fonts\Satoshi-Bold.otf);
-}
-
-table,
-tr.header,
-td {
-    padding-top: 10px;
-
-}
-
-.moddel:hover,
-.moddel_1:hover {
-    transform: scale(1.01);
-    transition: all 0.3s ease-in-out;
-    /* box-shadow: 4% 4% 8% rgba(0, 0, 0, 0.2); */
 }
 
 .circle {
