@@ -1,82 +1,64 @@
 * {
     box-sizing: border-box;
-    /* height: 500px;
-    background-color: blue;
-    margin: 30px;
-    border-radius: 15px;
-    margin: 50px auto; */
+    break-inside: auto;
 }
-.Nav{
+
+header {
+    width: 100%;
+    /* margin-bottom: 50px; */
     display: flex;
-    /* width: 100%; */
-    background-color: rgba(255, 255, 255, 0.356);
-    margin: 1% auto;
     justify-content: center;
+}
+@media (max-width: 360px) and (min-width: 0px) {
+    .Nav {
+      width: 100%;
+      flex-wrap: wrap; /* Allow navigation items to wrap */
+      height: auto; /* Allow height to adjust based on content */
+      justify-content: space-around; /* Distribute items */
+      padding: 5px 0; /* Adjust padding */
+    }
+    .Nav nav {
+      width: auto; /* Let nav content determine its width */
+      flex-basis: auto; /* Let nav content determine its basis */
+    }
+  }
+
+.Nav {
+    display: inline-flex;
+    background-color: rgba(255, 255, 255, 0.356);
     border-radius: 70px;
-    /* position: static; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
     position: fixed;
     top: 10px;
-    left: 30%;
     z-index: 100;
-    align-items: center;
+
 }
+
 .Nav nav ul {
-    list-style-type: none;
-    overflow: hidden;
     display: flex;
-    gap: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+    text-align: center;
+    gap: 10px;
     justify-content: center;
-    align-items: center;
 }
-.Nav nav ul li {
-    float: left;
-    text-align: center;
-    font-weight: bold;
+
+.Nav nav ul li a {
+    text-decoration: none;
     color: rgb(2, 95, 95);
     padding: 10px;
-    /* background-color: rgb(247, 224, 196); */
-    border-radius: 50px;
-    margin-left: 5px;
-    cursor: pointer;
 }
-.Nav nav ul li a{
-    text-decoration: none;
-}
-.Nav nav ul li a:visited {
-    color: rgb(2, 95, 95);
-}
-.Nav nav ul li a:any-link {
-    color: rgb(2, 95, 95);
-}
-/* .Nav table tr  td.nav_hover {
-    display: inline-flex;
-    gap: 20px;
-    text-align: center;
-    font-weight: bold;
-    color: rgb(2, 95, 95);
-    padding: 10px;
-    background-color: rgb(247, 224, 196);
-    border-radius: 50px;
-    margin-left: 5px;
-    cursor: pointer;
-}
-.Nav table tr  td.nav_hover a:hover{
-    background-color: rgb(2, 95, 95);
-    color: white;
-} */
-/* .Nav table tr  td.nav_hover a{
-    text-decoration: none;
-    color: rgb(2, 95, 95);padding: 10px;
-    background-color: rgb(247, 224, 196);
-    border-radius: 50px;
-    margin-left: 5px;
-    cursor: pointer;
-} */
 
 body {
     background-color: rgb(241, 241, 210);
     padding: 30px;
+}
+
+Section.H-1 {
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -84,16 +66,60 @@ h1 {
     color: rgb(2, 95, 95);
     font-size: 7em;
     font-family: Satoshi;
-    line-height: 120px;
+    margin: 0;
+    font-weight: bold;
+    font-size: clamp(0.75rem, 15vw + 0.5rem, 10rem);
+
+    /* Essential for preventing layout breaks on small screens */
+    line-height: 1;
+    word-wrap: break-word;
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+    section.flottant {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* Ensure it takes full width */
+    }
+
+    section.flottant .moddel,
+    section.flottant .moddel_1 {
+        width: 100%;
+        /* Make children take full width in column layout */
+        float: none;
+        /* Remove float */
+        margin: 10px 0;
+        /* Adjust margin for vertical stacking */
+    }
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+    section.flottant_1 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* Ensure it takes full width */
+    }
+
+    section.flottant_1 .moddel,
+    section.flottant_1 .moddel_1 {
+        width: 100%;
+        /* Make children take full width in column layout */
+        float: none;
+        /* Remove float */
+        margin: 10px 0;
+        /* Adjust margin for vertical stacking */
+    }
 }
 
 .moddel {
-    height: 100%;
-    /* background-color: blue; */
+    height: 500px;
     margin: 10px;
     border-radius: 60px;
     width: 40%;
 }
+
 .moddel img {
     border-radius: 10%;
     width: 100%;
@@ -101,25 +127,25 @@ h1 {
 }
 
 .moddel_1 {
-    height: 100%;
-    /* background-color: rgb(0, 255, 76); */
+    height: 500px;
     margin: 10px;
     border-radius: 10%;
     width: 55%;
 }
+
 .moddel_1 img {
     border-radius: 10%;
     width: 100%;
     height: 100%;
 }
+
 .moddel_2 {
     height: 100%;
     margin-top: 5%px;
     border-radius: 10%;
     width: 40%;
-    padding-top: 2%;
-    /* background-color: aqua; */
-    margin-left: 2%;
+    padding-top: 50px;
+    margin-left: 50px;
 }
 
 p {
@@ -158,14 +184,6 @@ section {
 /* section {
     margin-top: 50px;
     margin-bottom: 70px;
-} */
-
-.header {
-    padding: 2%;
-    width: 100%;
-    margin: 1% auto;
-    height: 4%;
-    ;
 }
 
 @font-face {
@@ -202,21 +220,22 @@ td.body {
     color: rgba(2, 82, 82, 0.712);
 }
 
-/* a copy od model_2 cuz to have the new text with the colous was tidous */
+/* a copy od model_2 cuz to have the new text with the colous was tedious */
 .copy {
     height: 400px;
     margin-top: 150px;
     border-radius: 60px;
     width: 40%;
     padding-top: 50px;
-    /* background-color: aqua; */
     margin-left: 50px;
     font-weight: 500;
     color: rgba(2, 82, 82, 0.712)
 }
+
 .copy_hover:hover {
     color: rgb(2, 95, 95);
 }
+
 .textbox {
     background-color: rosybrown;
 }
