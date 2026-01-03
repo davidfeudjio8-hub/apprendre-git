@@ -10,3 +10,46 @@
     
 </body>
 </html>
+
+@media (max-width: 360px) and (min-width: 0px) {
+    .Nav {
+      width: 100%;
+      flex-wrap: wrap; /* Allow navigation items to wrap */
+      height: auto; /* Allow height to adjust based on content */
+      justify-content: space-around; /* Distribute items */
+      padding: 5px 0; /* Adjust padding */
+    }
+    .Nav nav {
+      width: auto; /* Let nav content determine its width */
+      flex-basis: auto; /* Let nav content determine its basis */
+    }
+  }
+
+.Nav {
+    display: inline-flex;
+    background-color: rgba(255, 255, 255, 0.356);
+    border-radius: 70px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+    position: fixed;
+    padding: 5px;
+    top: 10px;
+    z-index: 100;
+
+}
+
+.Nav nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+    text-align: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.Nav nav ul li a {
+    text-decoration: none;
+    color: rgb(2, 95, 95);
+    padding: 10px;
+}

@@ -10,24 +10,7 @@ header {
     justify-content: center;
 }
 /* Specifically targeting small mobile devices (0px to 360px) */
-@media (max-width: 360px) {
-    .Nav {
-        padding: 5px 8px; /* Shrink container padding */
-        width: 92%;       /* Ensure it doesn't touch screen edges */
-        left: 4%;         /* Center it manually since it's position: fixed */
-    }
 
-    .Nav nav ul {
-        gap: 2px;         /* Minimize space between menu items */
-    }
-
-    .Nav nav ul li a {
-        /* Use clamp to scale font between 12px and 16px based on screen width */
-        font-size: clamp(12px, 4vw, 16px); 
-        padding: 8px 10px; /* Reduce internal link padding */
-        white-space: nowrap; /* Prevents "Contact" etc. from breaking into 2 lines */
-    }
-}
 .Nav {
     display: inline-flex;
     background-color: rgba(255, 255, 255, 0.356);
@@ -38,10 +21,12 @@ header {
     padding: 10px 15px;
     /* Adds space around the list */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    /* top: 20px; */
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
+    z-index: 100;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    gap: 1vw;
 
 }
 
@@ -50,7 +35,6 @@ header {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    /* overflow: hidden; */
     text-align: center;
     gap: 10px;
     justify-content: center;
@@ -65,12 +49,7 @@ header {
     /* Makes links fill the whole li area */
     padding: 10px 20px;
     /* Space inside each link */
-    text-decoration: none;
-    /* Removes underlines */
     font-weight: 600;
-    /* Bold text */
-    font-size: 20px;
-    /* Base font size */
     gap: 15px;
     /* Space between items */
     transition: background-color 0.3s, border-radius 0.3s;
@@ -265,4 +244,48 @@ td.body {
 
 .textbox {
     background-color: rosybrown;
+}
+@media (max-width: 500px) {
+    .Nav {
+        /* 1. Scale the container width and position */
+        width: 90vw;            /* Container takes up 90% of screen width */
+        max-width: 500px; 
+        padding: 1.5vw 2vw;     /* Padding scales with screen width */
+        border-radius: 10vw;    /* Keeps the "pill" shape proportional */
+        
+        /* Ensure it stays centered */
+        left: 50%;
+        transform: translateX(-50%);
+        top: 15px;
+    }
+
+    .Nav nav ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between; /* Spreads items evenly across the 90vw */
+        gap: 1vw;              /* Gap scales with screen width */
+    }
+
+    .Nav nav ul li {
+        flex: 1;               /* Forces each list item to take equal space */
+        text-align: center;
+    }
+
+    .Nav nav ul li a {
+        /* 2. Scale the text and internal padding */
+        font-size: 3.5vw;       /* Text shrinks as screen shrinks */
+        padding: 2vw 0.5vw;     /* Vertical and horizontal padding scale */
+        
+        /* Prevent layout breaking */
+        display: block;
+        white-space: nowrap; 
+        width: 100%;
+    }
+}
+
+/* Hard stop for extremely small screens to keep text readable */
+@media (max-width: 320px) {
+    .Nav nav ul li a {
+        font-size: 11px; /* Prevents text from becoming microscopic */
+    }
 }
