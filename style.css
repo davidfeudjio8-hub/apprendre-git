@@ -128,12 +128,6 @@ h1 {
 
     }
 }
-section {
-    display: flex;
-    flex-wrap: wrap;
-    /* allows items to move to the next line on mobile */
-}
-
 .moddel {
     height: 500px;
     margin: 10px;
@@ -196,21 +190,15 @@ p {
     /* margin-bottom: 50px;} */
 section {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse; /* Applied change */
+    justify-content: space-around
+    /* allows items to move to the next line on mobile */
 }
-.clr {
-    clear: both;
+ section .flottant div {
+    flex-direction : row;
+    /* */
 }
-
- section .flottant_1 div {
-    display: flex;
-    flex-direction: row;
-    /* margin-bottom: 50px; */
-}
-
-.clr {
-    clear: both;
-}
-
 .circle {
     height: 50px;
     width: 50px;
@@ -249,10 +237,10 @@ td.body {
     .Nav {
         /* 1. Scale the container width and position */
         width: 90vw;            /* Container takes up 90% of screen width */
-        max-width: 500px; 
+        max-width: 500px;
         padding: 1.5vw 2vw;     /* Padding scales with screen width */
         border-radius: 10vw;    /* Keeps the "pill" shape proportional */
-        
+
         /* Ensure it stays centered */
         left: 50%;
         transform: translateX(-50%);
@@ -275,10 +263,10 @@ td.body {
         /* 2. Scale the text and internal padding */
         font-size: 3.5vw;       /* Text shrinks as screen shrinks */
         padding: 2vw 0.5vw;     /* Vertical and horizontal padding scale */
-        
+
         /* Prevent layout breaking */
         display: block;
-        white-space: nowrap; 
+        white-space: nowrap;
         width: 100%;
     }
 }
